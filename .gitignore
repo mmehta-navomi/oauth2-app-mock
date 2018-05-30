@@ -1,0 +1,6 @@
+.DS_Store
+.env
+.env_auth0
+.env.auth0
+
+.env.lp

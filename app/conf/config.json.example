@@ -1,0 +1,19 @@
+{
+  "auth": [
+    {
+      "clientId": "XXXX",
+      "clientSecret": "XXXX",
+      "accountId": "XXXX"
+    },
+    {
+      "clientId": "XXXX",
+      "clientSecret": "XXXX",
+      "accountId": "XXXX"
+    },
+    {
+      "clientId": "XXXX",
+      "clientSecret": "XXXX",
+      "accountId": "XXXX"
+    }        
+  ]
+}

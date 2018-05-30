@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  .w3-container
+    if loggedIn
+      h4 You are logged in!
+    else
+      script.
+        var login = function() {
+          var accountId = document.getElementById('accountId').value;
+          if (accountId) {
+            window.location.href = `api/account/${accountId}/sso`;
+          }
+        }    
+      h4 You are not logged in!
+      input(id="accountId" name="accountId" placeholder="Enter Account ID")
+      button(onclick='login()') Login with SSO
