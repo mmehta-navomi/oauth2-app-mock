@@ -2,6 +2,7 @@ const express = require('express');
 const passport = require('passport');
 const refresh = require('passport-oauth2-refresh');
 const router = express.Router();
+var agentloingcontroller = require("../agentlogin");
 
 // login
 const passportLogin = (req, res, next) =>
@@ -30,13 +31,16 @@ const passportRefresh = (req, res, next) => {
     });
   } else {
     res.redirect('/user');
-  }  
-};  
+  }
+};
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index');
 });
+
+//Agent Widget Agent Login Routes Starts
+router.get('/auth/:accountId',agentloingcontroller.passApp);
 
 router.get('/api/account/:accountId/sso', passportLogin, function(req, res) {
   res.redirect('/');
@@ -49,9 +53,13 @@ router.get('/logout', function(req, res) {
 
 router.get('/api/account/:accountId/refresh', passportRefresh);
 
-router.get('/api/account/:accountId/callback', passportCallback, function(req, res) {
-  res.redirect(req.session.returnTo || '/user');
-});
+router.get('/:accountId/callback', passportCallback, function(req, res) {
+  // console.log(req.user);
+  // res.redirect(req.session.returnTo || '/user');
+  res.render('user', {
+    user: req.user
+  });
+})
 
 router.get('/failure', function(req, res) {
   var error = req.flash('error');

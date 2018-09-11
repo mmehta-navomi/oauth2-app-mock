@@ -1,19 +1,21 @@
 {
   "auth": [
     {
-      "clientId": "XXXX",
-      "clientSecret": "XXXX",
-      "accountId": "XXXX"
+      "accountId": "XXXX",
+      "agentloginAuthURL": "https://va.sentinel.liveperson.net/sentinel/api/account/XXXX/authorize?v=1.0",
+      "agentloginTokenURL": "https://va.sentinel.liveperson.net/sentinel/api/account/XXXX/token?v=2.0",
+      "agentloginCallBackURL": "http://localhost:8080/XXXX/callback?view=ivragentview",
+      "agentloginClientId": "XXXX",
+      "agentloginClientSecret": "XXXX"
+
     },
     {
-      "clientId": "XXXX",
-      "clientSecret": "XXXX",
-      "accountId": "XXXX"
-    },
-    {
-      "clientId": "XXXX",
-      "clientSecret": "XXXX",
-      "accountId": "XXXX"
-    }        
+        "accountId": "XXXX",
+        "agentloginAuthURL": "https://va.sentinel.liveperson.net/sentinel/api/account/XXXX/authorize?v=1.0",
+        "agentloginTokenURL": "https://va.sentinel.liveperson.net/sentinel/api/account/XXXX/token?v=2.0",
+        "agentloginCallBackURL": "http://localhost:8080/XXXX/callback",
+        "agentloginClientId": "XXXX",
+        "agentloginClientSecret": "XXXX"
+    }
   ]
 }
